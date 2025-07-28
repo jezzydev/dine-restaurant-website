@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --fontFamily: "League Spartan", sans-serif;
+  --fontHeadingXL: 300 80px/80px var(--fontFamily);
+  --fontHeadingL: 700 48px/48px var(--fontFamily);
+  --fontHeadingM: 700 20px/24px var(--fontFamily);
+  --fontHeadingS: 600 17px/28px var(--fontFamily);
+  --fontBody1: 400 20px/30px var(--fontFamily);
+  --fontBody2: 400 16px/26px var(--fontFamily);
+}
+
+body {
+  font: var(--fontBody1);
+  font-optical-sizing: auto;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font: var(--fontBody1);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
