@@ -4,16 +4,29 @@
 
 html {
   --fontFamily: "League Spartan", sans-serif;
-  --fontHeadingXL: 300 80px/80px var(--fontFamily);
+  --fontHeadingXL-desktop: 300 80px/80px var(--fontFamily);
+  --fontHeadingXL-tablet: 300 48px/64px var(--fontFamily);
+  --fontHeadingXL-mobile: 300 32px/40px var(--fontFamily);
   --fontHeadingL: 700 48px/48px var(--fontFamily);
+  --fontHeadingL-mobile: 700 32px/40px var(--fontFamily);
   --fontHeadingM: 700 20px/24px var(--fontFamily);
   --fontHeadingS: 600 17px/28px var(--fontFamily);
+  --fontHeadingS-mobile: 600 17px/16px var(--fontFamily);
   --fontBody1: 400 20px/30px var(--fontFamily);
   --fontBody2: 400 16px/26px var(--fontFamily);
+
+  /* colors */
+  --color-beaver: #9e7f66;
+  --color-cod-gray: #111111;
+  --color-mirage: #17192b;
+  --color-ebony-clay: #242b37;
+  --color-shuttle-gray: #5c6779;
+  --color-white: #ffffff;
+  --color-img-shadow: rgba(56, 66, 85, 50%);
 }
 
 body {
-  font: var(--fontBody1);
+  font: var(--fontBody2);
   font-optical-sizing: auto;
   margin: 0;
 }
@@ -29,8 +42,12 @@ a {
   padding: 0;
 }
 
+img {
+  display: block;
+}
+
 p {
-  font: var(--fontBody1);
+  font: var(--fontBody2);
 }
 
 ul {
@@ -39,6 +56,8 @@ ul {
 
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 button,
@@ -48,4 +67,18 @@ select {
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+}
+
+.Link {
+  font: var(--fontHeadingS-mobile);
+  letter-spacing: 2.5px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  padding: 23px 54px;
+  text-transform: uppercase;
+}
+
+.Link--dark {
+  border-color: var(--color-white);
 }

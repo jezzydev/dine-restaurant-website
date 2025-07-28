@@ -1,0 +1,73 @@
+.Section {
+  --overlapWidth: 74px;
+  --bottomPadding: 100px;
+  padding: 0 24px var(--bottomPadding);
+}
+
+.Section--light {
+  background-color: var(--color-white);
+  color: var(--color-ebony-clay);
+}
+
+.Section--dark {
+  background-color: var(--color-cod-gray);
+  color: var(--color-white);
+}
+
+.Section__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 42px;
+}
+
+.Section__image {
+  object-fit: cover;
+  box-shadow: 0 75px 100px -50px var(--color-img-shadow);
+}
+
+.Section__content {
+  width: 100%;
+  display: grid;
+  gap: 36px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(2, auto);
+}
+
+.Section__text {
+  width: 100%;
+  text-align: center;
+  display: grid;
+  gap: 13px;
+}
+
+.Section__title {
+  font: var(--fontHeadingL-mobile);
+  letter-spacing: -0.4px;
+}
+
+.Section__subtitle {
+  display: block;
+}
+
+.Section__description {
+  font: var(--fontBody2);
+}
+
+.SectionContainer--overlap {
+  position: relative;
+}
+
+.SectionContainer--overlapTop {
+  top: calc(-1 * var(--overlapWidth));
+}
+
+.Section:has(.SectionContainer--overlapTop) {
+  padding-bottom: calc(var(--bottomPadding) - var(--overlapWidth));
+}
+
+.SectionContainer--overlap .Section__image {
+  z-index: 20;
+}

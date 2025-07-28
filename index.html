@@ -16,33 +16,85 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/app.css" />
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/section.css" />
     <title>Frontend Mentor | Dine Website Challenge</title>
   </head>
   <body>
-    <div class="Hero__container">
-      <h1 class="Hero__title">Exquisite dining since 1989</h1>
-      <p class="Hero__description">
-        Experience our seasonal menu in beautiful country surroundings. Eat the
-        freshest produce from the comfort of our farmhouse.
-      </p>
-      <a class="Link Link--dark" href="">Book a table</a>
-    </div>
+    <section class="Section Section--dark Hero__section">
+      <div class="Section__container">
+        <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
+        <div class="Section__content">
+          <div class="Section__text">
+            <h1 class="Section__title">
+              Exquisite dining <span class="Section__subtitle">since 1989</span>
+            </h1>
+            <p class="Hero__description">
+              Experience our seasonal menu in beautiful country surroundings.
+              Eat the freshest produce from the comfort of our farmhouse.
+            </p>
+          </div>
+          <a class="Link Link--dark" href="">Book a table</a>
+        </div>
+      </div>
+    </section>
 
-    <section class="Section">
-      <h2 class="Section__title">Enjoyable place for all the family</h2>
-      <p class="Section__description">
-        Our relaxed surroundings make dining with us a great experience for
-        everyone. We can even arrange a tour of the farm before your meal.
-      </p>
+    <section class="Section Section--light">
+      <div
+        class="Section__container SectionContainer--overlap SectionContainer--overlapTop"
+      >
+        <img
+          class="Section__image"
+          alt="Section image"
+          src="./images/homepage/enjoyable-place-mobile.jpg"
+        />
+        <div class="Section__content">
+          <img
+            class="Section__divider"
+            alt="Divider"
+            src="./images/patterns/pattern-divide.svg"
+          />
+          <div class="Section__text">
+            <h2 class="Section__title">
+              Enjoyable place
+              <span class="Section__subtitle">for all the family</span>
+            </h2>
+            <p class="Section__description">
+              Our relaxed surroundings make dining with us a great experience
+              for everyone. We can even arrange a tour of the farm before your
+              meal.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="Section">
-      <h2 class="Section__title">The most locally sourced food</h2>
-      <p class="Section__description">
-        All our ingredients come directly from our farm or local fishery. So you
-        can be sure that you’re eating the freshest, most sustainable food.
-      </p>
+
+    <section class="Section Section--light">
+      <div class="Section__container">
+        <img
+          class="Section__image"
+          alt="Section image"
+          src="./images/homepage/locally-sourced-mobile.jpg"
+        />
+        <div class="Section__content">
+          <img
+            class="Section__divider"
+            alt="Divider"
+            src="./images/patterns/pattern-divide.svg"
+          />
+          <div class="Section__text">
+            <h2 class="Section__title">The most locally sourced food</h2>
+            <p class="Section__description">
+              All our ingredients come directly from our farm or local fishery.
+              So you can be sure that you’re eating the freshest, most
+              sustainable food.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
-    <section class="Section">
+
+    <section class="Section Section--dark">
       <h2 class="Section__title">A few highlights from our menu</h2>
       <p class="Section__description">
         We cater for all dietary requirements, but here’s a glimpse at some of
@@ -51,16 +103,25 @@
 
       <ul class="Menu__list">
         <li class="MenuItem">
-          Seared Salmon Fillet Our locally sourced salmon served with a
-          refreshing buckwheat summer salad.
+          <h3>Seared Salmon Fillet</h3>
+          <p>
+            Our locally sourced salmon served with a refreshing buckwheat summer
+            salad.
+          </p>
         </li>
         <li class="MeunItem">
-          Rosemary Filet Mignon Our prime beef served to your taste with a
-          delicious choice of seasonal sides.
+          <h3>Rosemary Filet Mignon</h3>
+          <p>
+            Our prime beef served to your taste with a delicious choice of
+            seasonal sides.
+          </p>
         </li>
         <li class="MenuItem">
-          Summer Fruit Chocolate Mousse Creamy mousse combined with summer
-          fruits and dark chocolate shavings.
+          <h3>Summer Fruit Chocolate Mousse</h3>
+          <p>
+            Creamy mousse combined with summer fruits and dark chocolate
+            shavings.
+          </p>
         </li>
       </ul>
     </section>
@@ -91,10 +152,11 @@
       </p>
       <a class="Link Link--light" href="">Book a table</a>
     </section>
-
-    <footer>
-      <h3>Ready to make a reservation?</h3>
+    <section class="Section">
+      <h2>Ready to make a reservation?</h2>
       <a class="Link Link--transparent" href="">Book a table</a>
+    </section>
+    <footer>
       <p>Marthwaite, Sedbergh Cumbria +00 44 123 4567</p>
       <p>
         Open Times Mon - Fri: 09:00 AM - 10:00 PM Sat - Sun: 09:00 AM - 11:30 PM

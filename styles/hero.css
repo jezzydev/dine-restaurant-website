@@ -1,0 +1,33 @@
+.Section.Hero__section {
+  background: url(../images/homepage/hero-bg-mobile.jpg) no-repeat,
+    var(--color-mirage);
+  padding: 232px 24px 152px;
+}
+
+.Hero__section .Section__container {
+  display: grid;
+  gap: 36px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.Hero__section .Section__content {
+  gap: 53px;
+}
+
+.Hero__section .Section__text {
+  gap: 21px;
+}
+
+.Hero__section .Logo {
+  width: 82px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.Hero__section .Section__title,
+.Hero__section .Section__subtitle {
+  font: var(--fontHeadingXL-mobile);
+  letter-spacing: -0.4px;
+}
