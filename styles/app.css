@@ -23,6 +23,8 @@ html {
   --color-shuttle-gray: #5c6779;
   --color-white: #ffffff;
   --color-img-shadow: rgba(56, 66, 85, 50%);
+  --color-white-blur: rgba(255, 255, 255, 15%);
+  --color-ash-gray: #4c4c4c;
 }
 
 body {
@@ -69,7 +71,7 @@ select {
   margin: 0;
 }
 
-.Link {
+.LinkCta {
   font: var(--fontHeadingS-mobile);
   letter-spacing: 2.5px;
   text-align: center;
@@ -79,6 +81,12 @@ select {
   text-transform: uppercase;
 }
 
-.Link--dark {
+.LinkCta--dark {
   border-color: var(--color-white);
+  background-color: transparent;
+}
+
+.LinkCta--light {
+  background-color: var(--color-cod-gray);
+  border-color: var(--color-cod-gray);
 }
