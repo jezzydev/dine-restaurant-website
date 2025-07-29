@@ -1,7 +1,5 @@
 .Section {
-  --overlapWidth: 74px;
-  --bottomPadding: 100px;
-  padding: 0 24px var(--bottomPadding);
+  padding: 80px 24px;
 }
 
 .Section--light {
@@ -34,7 +32,7 @@
   justify-content: center;
   justify-items: center;
   align-items: center;
-  grid-template-rows: repeat(2, auto);
+  grid-auto-rows: auto;
 }
 
 .Section__text {
@@ -57,27 +55,30 @@
   font: var(--fontBody2);
 }
 
-.SectionContainer--overlap {
+/* Features section */
+.Features__section {
+  --overlapWidth: 74px;
+  --bottomPadding: 80px;
+  padding: 0 24px var(--bottomPadding);
+}
+
+.FeaturesContainer--overlap {
   position: relative;
 }
 
-.SectionContainer--overlapTop {
+.FeaturesContainer--overlapTop {
   top: calc(-1 * var(--overlapWidth));
 }
 
-.Section:has(.SectionContainer--overlapTop) {
+.Section:has(.FeaturesContainer--overlapTop) {
   padding-bottom: calc(var(--bottomPadding) - var(--overlapWidth));
 }
 
-.SectionContainer--overlap .Section__image {
+.FeaturesContainer--overlap .Section__image {
   z-index: 20;
 }
 
 /* Menu section */
-.Menu__section {
-  padding: 72px 24px 100px;
-}
-
 .Menu__list {
   display: grid;
   gap: 24px;
@@ -121,10 +122,6 @@
 }
 
 /* Catering section */
-.Catering__section {
-  padding: 80px 24px 124px;
-}
-
 .Catering__section .CateringImage.CateringImage--hidden,
 .Catering__section .CateringText.CateringText--hidden {
   display: none;
@@ -160,4 +157,13 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* Reservation section */
+.Reservation__section {
+  background: var(--bg-ready-mobile) center no-repeat;
+}
+
+.Reservation__section .Section__container {
+  gap: 20px;
 }

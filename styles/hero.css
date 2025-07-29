@@ -20,12 +20,6 @@
   gap: 21px;
 }
 
-.Hero__section .Logo {
-  width: 82px;
-  height: 32px;
-  object-fit: cover;
-}
-
 .Hero__section .Section__title,
 .Hero__section .Section__subtitle {
   font: var(--fontHeadingXL-mobile);

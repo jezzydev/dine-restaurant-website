@@ -14,6 +14,7 @@ html {
   --fontHeadingS-mobile: 600 17px/16px var(--fontFamily);
   --fontBody1: 400 20px/30px var(--fontFamily);
   --fontBody2: 400 16px/26px var(--fontFamily);
+  --fontFooter: 400 14px/28px var(--fontFamily);
 
   /* colors */
   --color-beaver: #9e7f66;
@@ -25,6 +26,8 @@ html {
   --color-img-shadow: rgba(56, 66, 85, 50%);
   --color-white-blur: rgba(255, 255, 255, 15%);
   --color-ash-gray: #4c4c4c;
+
+  --bg-ready-mobile: url(../images/homepage/ready-bg-mobile.jpg);
 }
 
 body {
@@ -71,6 +74,13 @@ select {
   margin: 0;
 }
 
+.Logo {
+  /* width: 82px; */
+  /* height: 32px; */
+  object-fit: cover;
+}
+
+/* LinkCta */
 .LinkCta {
   font: var(--fontHeadingS-mobile);
   letter-spacing: 2.5px;
@@ -89,4 +99,25 @@ select {
 .LinkCta--light {
   background-color: var(--color-cod-gray);
   border-color: var(--color-cod-gray);
+}
+
+/* Footer */
+.Footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 42px;
+}
+
+.Footer__section .Section__text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  font: var(--fontFooter);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
