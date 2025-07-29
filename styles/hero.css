@@ -23,5 +23,5 @@
 .Hero__section .Section__title,
 .Hero__section .Section__subtitle {
   font: var(--fontHeadingXL-mobile);
-  letter-spacing: -0.4px;
+  letter-spacing: var(--letterSpacingHeroTitle);
 }

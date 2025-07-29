@@ -1,0 +1,42 @@
+/* Menu section */
+.Menu__list {
+  display: grid;
+  gap: 24px;
+}
+
+.MenuItem {
+  border: none;
+  display: grid;
+  gap: 36px;
+  padding-bottom: 28px;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas:
+    "menu-img"
+    "menu-text";
+}
+
+.MenuItem__image {
+  grid-area: menu-img;
+}
+
+.MenuItem__text {
+  grid-area: menu-text;
+  width: 100%;
+  text-align: center;
+  display: grid;
+  gap: 6px;
+}
+
+.MenuItem__title {
+  font: var(--fontHeadingM);
+  letter-spacing: -0.25px;
+}
+
+.MenuItem__description {
+  font: var(--fontBody2);
+}
+
+.MenuItem:not(:last-of-type) {
+  border-bottom: 1px solid var(--color-white-blur);
+}

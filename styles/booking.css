@@ -1,0 +1,24 @@
+.Section.BookingHero__section {
+  background: url(../images/booking/hero-bg-mobile.jpg) no-repeat;
+}
+
+.BookingHero__section .Section__container {
+  display: grid;
+  gap: 44px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.BookingHero__section .Section__content {
+  gap: 19px;
+}
+
+.BookingHero__section .Section__text {
+  gap: 13px;
+}
+
+.BookingHero__section .Section__title {
+  font: var(--fontHeadingXL-mobile);
+  letter-spacing: var(--letterSpacingHeroTitle);
+}

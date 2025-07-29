@@ -1,0 +1,22 @@
+/* Features section */
+.Features__section {
+  --overlapWidth: 74px;
+  --bottomPadding: 80px;
+  padding: 0 24px var(--bottomPadding);
+}
+
+.FeaturesContainer--overlap {
+  position: relative;
+}
+
+.FeaturesContainer--overlapTop {
+  top: calc(-1 * var(--overlapWidth));
+}
+
+.Section:has(.FeaturesContainer--overlapTop) {
+  padding-bottom: calc(var(--bottomPadding) - var(--overlapWidth));
+}
+
+.FeaturesContainer--overlap .Section__image {
+  z-index: 20;
+}

@@ -1,0 +1,37 @@
+/* Catering section */
+.Catering__section .CateringImage.CateringImage--hidden,
+.Catering__section .CateringText.CateringText--hidden {
+  display: none;
+}
+
+.Catering__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.CateringItem {
+  position: relative;
+  font: var(--fontHeadingS);
+  letter-spacing: 2.5px;
+  color: var(--color-ash-gray);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.CateringItem--selected {
+  opacity: 1;
+}
+
+.CateringItem--selected::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 48px;
+  background: var(--color-beaver);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}

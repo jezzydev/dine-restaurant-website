@@ -1,0 +1,8 @@
+/* ReservationCta section */
+.ReservationCta__section {
+  background: var(--bg-ready-mobile) center no-repeat;
+}
+
+.ReservationCta__section .Section__container {
+  gap: 20px;
+}
