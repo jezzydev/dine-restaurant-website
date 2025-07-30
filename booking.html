@@ -42,36 +42,43 @@
     >
       <div class="Section__container">
         <div class="Section__content">
-          <form action="" class="ReservationForm">
-            <div class="FormItem"><span class="Input__wrapper"><input id="fullname" type="text" placeholder="Name"></input></span></div>
-            <div class="FormItem"><span class="Input__wrapper"><input id="email" type="email" placeholder="Email"></input></span></div>
+          <form method="POST" action="" class="ReservationForm" novalidate>
+            <div class="FormItem">
+              <div class="FormItem__container">
+                <input id="fullname" name="fullname" type="text" placeholder="Name"></input>
+              </div>
+            </div>
+            <div class="FormItem">
+              <div class="FormItem__container">
+                <input id="email" name="email" type="email" placeholder="Email"></input>
+              </div>
+          </div>
             <div class="FormItem">
               <label for="month">Pick a date</label>
               <div class="Date__container">
-                <span class="Input__wrapper"><input id="month" type="number" min="01" max="12" placeholder="MM"></input></span>
-                <span class="Input__wrapper"><input id="date" type="number" min="01" max="31" placeholder="DD"></ipnut></span> 
-                <span class="Input__wrapper"><input id="year" type="number" min="2025" max="2025" placeholder="YYYY"></input></span>
+                <input id="month" name="month" type="number" min="01" max="12" placeholder="MM"></input>
+                <input id="date" name="date" type="number" min="01" max="31" placeholder="DD"></input>
+                <input id="year" name="year" type="number" min="2025" max="2025" placeholder="YYYY"></input>
               </div>
             </div>
             <div class="FormItem">
               <label for="hour">Pick a time</label>
               <div class="Time__container">
-                <span class="Input__wrapper"><input id="hour" type="number" min="01" max="12" placeholder="09"></input></span>
-                <span class="Input__wrapper"><input id="minute" type="number" min="00" max="45" step="15" placeholder="00"></input></span>
-                <span class="Input__wrapper"><select id="meridiem"></select></span>
+                <input id="hour" name="hour" type="number" min="01" max="12" placeholder="09"></input>
+                <input id="minute" name="minute" type="number" min="00" max="45" step="15" placeholder="00"></input>
+                <select id="meridiem" name="meridiem"></select></div>
               </div>
             </div>
             <div class="FormItem">
-              <span class="Input__wrapper">
-                <div class="Quantity__container">
-                  <button class="Quantity__btn Quantity--decrease"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
-                  <p class="Quantity__text"><span class="Quantity__value">1</span> people</p>
-                  <button class="Quantity__btn Quantity--increase"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
+              <div class="Quantity__container">
+                <button class="Quantity__btn Quantity--decrease"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
+                <p class="Quantity__text"><span class="Quantity__value">1</span> people</p>
+                <button class="Quantity__btn Quantity--increase"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
+             
               </div>
-              </span>
             </div>
             <div class="FormItem">
-              <a class="LinkCta LinkCta--light ReservationSubmit__button" href="#">Make Reservation</a>
+              <button class="LinkCta LinkCta--light ReservationSubmit__button" type="submit">Make Reservation</button>
             </div>
           </form>
         </div>
@@ -98,5 +105,6 @@
         </div>
       </div>
     </footer>
+    <script src="./scripts/app.js"></script>
   </body>
 </html>

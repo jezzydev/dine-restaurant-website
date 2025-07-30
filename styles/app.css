@@ -17,7 +17,8 @@ html {
   --fontBody1: 400 20px/30px var(--fontFamily);
   --fontBody2: 400 16px/26px var(--fontFamily);
   --fontFooter: 400 14px/28px var(--fontFamily);
-  --fontPlaceholder: 400 20px/28px var(var(--fontFamily));
+  --fontPlaceholder: 400 20px/28px var(--fontFamily);
+  --fontInputError: 500 10px var(--fontFamily);
   --letterSpacingHeroTitle: -0.4px;
 
   /* colors */
@@ -31,6 +32,7 @@ html {
   --color-white-blur: rgba(255, 255, 255, 15%);
   --color-ash-gray: #4c4c4c;
   --color-med-gray: #8e8e8e;
+  --color-red: #b54949;
 
   --bg-ready-mobile: url(../images/homepage/ready-bg-mobile.jpg);
 }
@@ -68,7 +70,8 @@ ul {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: var(--color-white);
+  cursor: pointer;
+  outline: none;
 }
 
 button,
@@ -81,8 +84,14 @@ select {
   border: none;
 }
 
+input,
+select {
+  height: 45px;
+}
+
 button {
   background: none;
+  cursor: pointer;
 }
 
 input {
@@ -90,6 +99,7 @@ input {
   border: none;
   padding: 3px 16px;
   width: 100%;
+  outline: none;
 }
 
 input::placeholder {
@@ -105,6 +115,7 @@ input::placeholder {
 /* LinkCta */
 .LinkCta {
   font: var(--fontHeadingS-mobile);
+  color: var(--color-white);
   letter-spacing: 2.5px;
   text-align: center;
   border-width: 1px;

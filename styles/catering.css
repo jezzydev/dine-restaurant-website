@@ -14,14 +14,18 @@
 
 .CateringItem {
   position: relative;
+}
+
+.CateringItem__button {
+  color: var(--color-ash-gray);
   font: var(--fontHeadingS);
   letter-spacing: 2.5px;
-  color: var(--color-ash-gray);
   opacity: 0.5;
   text-transform: uppercase;
 }
 
-.CateringItem--selected {
+.CateringItem--selected .CateringItem__button,
+.CateringItem__button:hover {
   opacity: 1;
 }
 

@@ -15,9 +15,31 @@
   gap: 8px;
 }
 
-.Input__wrapper {
+input,
+select,
+.Quantity__container {
+  padding: 3px 16px 14px;
   border-bottom: 1px solid var(--color-med-gray);
-  padding-bottom: 14px;
+}
+
+input[aria-invalid="true"] {
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+input[aria-invalid="true"]:placeholder-shown::placeholder {
+  color: var(--color-red);
+}
+
+.FormItem__inputError {
+  color: var(--color-red);
+  font: var(--fontInputError);
+  letter-spacing: -0.13px;
+  padding-top: 12px;
+}
+
+.FormItem__inputError--paddingLeft {
+  padding-left: 16px;
 }
 
 .Date__container,
@@ -42,7 +64,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .Quantity__btn img {
