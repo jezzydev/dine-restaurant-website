@@ -76,19 +76,26 @@ input,
 select {
   font-family: inherit;
   font-size: 100%;
-  line-height: 1.15;
   margin: 0;
+  padding: 0;
+  border: none;
+}
+
+button {
+  background: none;
 }
 
 input {
+  font: var(--fontPlaceholder);
   border: none;
-  padding: 3px 16px 0;
+  padding: 3px 16px;
+  width: 100%;
 }
 
 input::placeholder {
-  font: var(--fontPlaceholder);
   color: var(--color-cod-gray);
   opacity: 0.5;
+  padding: 0;
 }
 
 .Logo {

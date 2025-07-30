@@ -48,20 +48,30 @@
             <div class="FormItem">
               <label for="month">Pick a date</label>
               <div class="Date__container">
-                <span class="Input__wrapper"><input id="month" type="number" placeholder="MM"></input></span>
-                <span class="Input__wrapper"><input id="date" type="number" placeholder="DD"></ipnut></span> 
-                <span class="Input__wrapper"><input id="year" type="number" placeholder="YYYY"></input></span>
+                <span class="Input__wrapper"><input id="month" type="number" min="01" max="12" placeholder="MM"></input></span>
+                <span class="Input__wrapper"><input id="date" type="number" min="01" max="31" placeholder="DD"></ipnut></span> 
+                <span class="Input__wrapper"><input id="year" type="number" min="2025" max="2025" placeholder="YYYY"></input></span>
               </div>
             </div>
             <div class="FormItem">
               <label for="hour">Pick a time</label>
               <div class="Time__container">
-                <input id="hour" type="number"></input><input id="minute" type="number"></input><select id="meridiem"></select>
+                <span class="Input__wrapper"><input id="hour" type="number" min="01" max="12" placeholder="09"></input></span>
+                <span class="Input__wrapper"><input id="minute" type="number" min="00" max="45" step="15" placeholder="00"></input></span>
+                <span class="Input__wrapper"><select id="meridiem"></select></span>
               </div>
             </div>
-            <div class="FormItem"></div>
             <div class="FormItem">
-              <a class="LinkCta LinkCta--dark" href="#">Make Reservation</a>
+              <span class="Input__wrapper">
+                <div class="Quantity__container">
+                  <button class="Quantity__btn Quantity--decrease"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
+                  <p class="Quantity__text"><span class="Quantity__value">1</span> people</p>
+                  <button class="Quantity__btn Quantity--increase"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
+              </div>
+              </span>
+            </div>
+            <div class="FormItem">
+              <a class="LinkCta LinkCta--light ReservationSubmit__button" href="#">Make Reservation</a>
             </div>
           </form>
         </div>
