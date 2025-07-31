@@ -52,23 +52,27 @@
               <div class="FormItem__container">
                 <input id="email" name="email" type="email" placeholder="Email"></input>
               </div>
-          </div>
+            </div>
             <div class="FormItem">
-              <label for="month">Pick a date</label>
+              <div class="FormItem__labelContainer"><label class="Label Date__label" for="month">Pick a date</label></div>
               <div class="Date__container">
-                <input id="month" name="month" type="number" min="01" max="12" placeholder="MM"></input>
-                <input id="date" name="date" type="number" min="01" max="31" placeholder="DD"></input>
-                <input id="year" name="year" type="number" min="2025" max="2025" placeholder="YYYY"></input>
+                <input id="month" name="month" type="text" minlength="1" maxlength="2"  placeholder="MM"></input>
+                <input id="day" name="day" type="text" minlength="1" maxlength="2" placeholder="DD"></input>
+                <input id="year" name="year" type="text" minlength="4" maxlength="4" placeholder="YYYY"></input>
               </div>
             </div>
             <div class="FormItem">
-              <label for="hour">Pick a time</label>
+              <div class="FormItem__labesContainer"><label class="Label Time__label" for="hour">Pick a time</label></div>
               <div class="Time__container">
-                <input id="hour" name="hour" type="number" min="01" max="12" placeholder="09"></input>
-                <input id="minute" name="minute" type="number" min="00" max="45" step="15" placeholder="00"></input>
-                <select id="meridiem" name="meridiem"></select></div>
+                <input id="hour" name="hour" type="text" minLength="1" maxLength="2" placeholder="09"></input>
+                <input id="minute" name="minute" type="text" minLength="1" maxLength="2" placeholder="00"></input>
+                <select id="meridiem" name="meridiem" class="Time__select">
+                  <button><selectedcontent></selectedcontent></button>
+                  <option value="am">AM</option>
+                  <option value="pm">PM</option>
+                </select>
               </div>
-            </div>
+            </div>            
             <div class="FormItem">
               <div class="Quantity__container">
                 <button class="Quantity__btn Quantity--decrease"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>

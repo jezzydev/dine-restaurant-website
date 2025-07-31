@@ -15,14 +15,31 @@
   gap: 8px;
 }
 
+.FormItem__inputError {
+  color: var(--color-red);
+  font: var(--fontInputError);
+  letter-spacing: -0.13px;
+}
+
+.FormItem__inputError--paddingTop {
+  padding-top: 12px;
+}
+
+.FormItem__inputError--paddingLeft {
+  padding-left: 16px;
+}
+
 input,
 select,
 .Quantity__container {
-  padding: 3px 16px 14px;
+  --inputHorizontalPadding: 16px;
+  --inputTopPadding: 3px;
+  padding: var(--inputTopPadding) var(--inputHorizontalPadding) 14px;
   border-bottom: 1px solid var(--color-med-gray);
 }
 
-input[aria-invalid="true"] {
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
   color: var(--color-red);
   border-color: var(--color-red);
 }
@@ -31,26 +48,80 @@ input[aria-invalid="true"]:placeholder-shown::placeholder {
   color: var(--color-red);
 }
 
-.FormItem__inputError {
-  color: var(--color-red);
-  font: var(--fontInputError);
-  letter-spacing: -0.13px;
-  padding-top: 12px;
+.Label {
+  font: var(--inputLabel);
+  color: var(--color-cod-gray);
 }
 
-.FormItem__inputError--paddingLeft {
-  padding-left: 16px;
+.Label--targetError {
+  color: var(--color-red);
 }
 
 .Date__container,
 .Time__container {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(3, 1fr);
+  --minInputWidth: 73px;
+  grid-template-columns: var(--minInputWidth) var(--minInputWidth) 1fr;
   justify-content: center;
   align-items: center;
 }
 
+/* AM/PM */
+.Time__select,
+.Time__select::picker(select) {
+  appearance: base-select;
+}
+
+.Time__select {
+  border-radius: 0;
+}
+
+.Time__select::picker-icon {
+  content: var(--icon-arrow);
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.4s;
+  transform-origin: center;
+}
+
+.Time__select:open::picker-icon {
+  transform: rotate(180deg);
+}
+
+.Time__select::picker(select) {
+  opacity: 0;
+  border: none;
+  box-shadow: 0 15px 25px 0 var(--color-picker-shadow);
+  transition: all 0.4s allow-discrete;
+}
+
+.Time__select::picker(select):popover-open {
+  opacity: 1;
+}
+
+@starting-style {
+  .Time__select::picker(select):popover-open {
+    opacity: 0;
+  }
+}
+
+.Time__select option {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.Time__select option::checkmark {
+  content: var(--icon-check);
+}
+
+.Time__select::picker(select) {
+  top: calc(anchor(bottom) + 8px);
+}
+
+/* quantity */
 .Quantity__container {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -79,11 +150,7 @@ input[aria-invalid="true"]:placeholder-shown::placeholder {
   letter-spacing: -0.25px;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  appearance: none;
-}
-
+/* submit button */
 .ReservationSubmit__button {
   font: var(--fontHeadingS);
   padding: 17px 32px;

@@ -17,7 +17,10 @@ html {
   --fontBody1: 400 20px/30px var(--fontFamily);
   --fontBody2: 400 16px/26px var(--fontFamily);
   --fontFooter: 400 14px/28px var(--fontFamily);
-  --fontPlaceholder: 400 20px/28px var(--fontFamily);
+  --fontInputPlaceholder: 400 20px/28px var(--fontFamily);
+  --fontInputLabel: 400 20px/28px var(--fontFamily);
+  --fontSelect: 400 20px/28px var(--fontFamily);
+  --fontSelectOption: 400 20px/28px var(--fontFamily);
   --fontInputError: 500 10px var(--fontFamily);
   --letterSpacingHeroTitle: -0.4px;
 
@@ -29,12 +32,15 @@ html {
   --color-shuttle-gray: #5c6779;
   --color-white: #ffffff;
   --color-img-shadow: rgba(56, 66, 85, 50%);
+  --color-picker-shadow: rgba(56, 66, 85, 24%);
   --color-white-blur: rgba(255, 255, 255, 15%);
   --color-ash-gray: #4c4c4c;
   --color-med-gray: #8e8e8e;
   --color-red: #b54949;
 
   --bg-ready-mobile: url(../images/homepage/ready-bg-mobile.jpg);
+  --icon-arrow: url(../images/icons/icon-arrow.svg);
+  --icon-check: url(../images/icons/icon-check.svg);
 }
 
 body {
@@ -87,6 +93,7 @@ select {
 input,
 select {
   height: 45px;
+  cursor: pointer;
 }
 
 button {
@@ -94,8 +101,16 @@ button {
   cursor: pointer;
 }
 
+select {
+  font: var(--fontSelect);
+}
+
+select option {
+  font: var(--fontSelectOption);
+}
+
 input {
-  font: var(--fontPlaceholder);
+  font: var(--fontInputPlaceholder);
   border: none;
   padding: 3px 16px;
   width: 100%;
