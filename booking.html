@@ -45,44 +45,59 @@
           <form method="POST" action="" class="ReservationForm" novalidate>
             <div class="FormItem">
               <div class="FormItem__container">
-                <input id="fullname" name="fullname" type="text" placeholder="Name"></input>
+                <div class="FormItem__inputContainer">
+                  <input id="fullname" name="fullname" type="text" placeholder="Name"></input>
+                </div>
               </div>
             </div>
             <div class="FormItem">
               <div class="FormItem__container">
-                <input id="email" name="email" type="email" placeholder="Email"></input>
+                <div class="FormItem__inputContainer">
+                  <input id="email" name="email" type="email" placeholder="Email"></input>
+                </div>
               </div>
             </div>
             <div class="FormItem">
-              <div class="FormItem__labelContainer"><label class="Label Date__label" for="month">Pick a date</label></div>
-              <div class="Date__container">
-                <input id="month" name="month" type="text" minlength="1" maxlength="2"  placeholder="MM"></input>
-                <input id="day" name="day" type="text" minlength="1" maxlength="2" placeholder="DD"></input>
-                <input id="year" name="year" type="text" minlength="4" maxlength="4" placeholder="YYYY"></input>
+              <div class="FormItem__container">
+                <div class="FormItem__labelContainer"><label class="Label Date__label" for="month">Pick a date</label></div>
+                <div class="FormItem__inputContainer">
+                  <div class="Date__container">
+                    <input id="month" name="month" type="text" minlength="1" maxlength="2"  placeholder="MM"></input>
+                    <input id="day" name="day" type="text" minlength="1" maxlength="2" placeholder="DD"></input>
+                    <input id="year" name="year" type="text" minlength="4" maxlength="4" placeholder="YYYY"></input>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="FormItem">
-              <div class="FormItem__labesContainer"><label class="Label Time__label" for="hour">Pick a time</label></div>
-              <div class="Time__container">
-                <input id="hour" name="hour" type="text" minLength="1" maxLength="2" placeholder="09"></input>
-                <input id="minute" name="minute" type="text" minLength="1" maxLength="2" placeholder="00"></input>
-                <select id="meridiem" name="meridiem" class="Time__select">
-                  <button><selectedcontent></selectedcontent></button>
-                  <option value="am">AM</option>
-                  <option value="pm">PM</option>
-                </select>
+              <div class="FormItem__container">
+                <div class="FormItem__labelContainer"><label class="Label Time__label" for="hour">Pick a time</label></div>
+                <div class="FormItem__inputContainer">
+                  <div class="Time__container">
+                    <input id="hour" name="hour" type="text" minLength="1" maxLength="2" placeholder="09"></input>
+                    <input id="minute" name="minute" type="text" minLength="1" maxLength="2" placeholder="00"></input>
+                    <select id="meridiem" name="meridiem" class="Time__select">
+                      <button><selectedcontent></selectedcontent></button>
+                      <option value="am">AM</option>
+                      <option value="pm">PM</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>            
             <div class="FormItem">
-              <div class="Quantity__container">
-                <button class="Quantity__btn Quantity--decrease"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
-                <p class="Quantity__text"><span class="Quantity__value">1</span> people</p>
-                <button class="Quantity__btn Quantity--increase"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
-             
+              <div class="FormItem__container">
+                <div class="FormItem__inputContainer">
+                  <div class="Quantity__container">
+                    <button class="Quantity__btn Quantity--decrease" type="button"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
+                    <p class="Quantity__text"><span class="Quantity__value"></span>&nbsp;<span class="Quantity__uom"></span></p>
+                    <button class="Quantity__btn Quantity--increase" type="button"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="FormItem">
-              <button class="LinkCta LinkCta--light ReservationSubmit__button" type="submit">Make Reservation</button>
+              <div class="FormItem__container"><button class="LinkCta LinkCta--light ReservationSubmit__button" type="submit">Make Reservation</button></div>
             </div>
           </form>
         </div>

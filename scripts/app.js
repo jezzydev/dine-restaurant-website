@@ -8,6 +8,11 @@ const reservationForm = document.querySelector('.ReservationForm');
 const errorFieldIsRequired = "This field is required.";
 const errorFieldIsIncomplete = "This field is incomplete.";
 const yearInput = document.querySelector('#year');
+const decreaseBtn = document.querySelector('.Quantity--decrease');
+const increaseBtn = document.querySelector('.Quantity--increase');
+const qtyValue = document.querySelector('.Quantity__value');
+const qtyUom = document.querySelector('.Quantity__uom');
+let reserveQty = 4;
 
 cateringItemButtons.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -39,6 +44,35 @@ cateringItemButtons.forEach(function (btn) {
     });
 });
 
+updateQty(reserveQty);
+decreaseBtn.addEventListener('click', decreaseQty);
+increaseBtn.addEventListener('click', increaseQty);
+
+function updateQty(qty) {
+    qtyValue.textContent = qty;
+
+    if (qty === 1) {
+        qtyUom.textContent = 'person';
+    }
+    else {
+        qtyUom.textContent = 'people';
+    }
+}
+
+function decreaseQty() {
+    if (reserveQty - 1 >= 1) {
+        reserveQty -= 1;
+        updateQty(reserveQty);
+    }
+}
+
+function increaseQty() {
+    if (reserveQty + 1 <= 12) {
+        reserveQty += 1;
+        updateQty(reserveQty);
+    }
+}
+
 reservationForm.addEventListener('submit', function (event) {
     event.preventDefault();
     resetValidation(this);
@@ -48,10 +82,15 @@ reservationForm.addEventListener('submit', function (event) {
 function validateForm(form) {
     validateName(form);
     validateEmail(form);
-    validateDate(form);
-    validateTime(form);
-    validateReservationTime(form);
-    //TODO: validate # people
+    const dateIsValid = validateDate(form);
+    const timeIsValid = validateTime(form);
+
+    if (dateIsValid && timeIsValid) {
+        const newHour = convertHourTo24HourFormat(form.hour.value, form.meridiem.value);
+        const rDate = new Date(form.year.value, form.month.value - 1, form.day.value, newHour, form.minute.value);
+
+        validateReservationDateTime(rDate);
+    }
 }
 
 function validateName(form) {
@@ -61,15 +100,19 @@ function validateName(form) {
 
     if (fieldIsEmpty(fullnameValue)) {
         errorMsgElem = createErrorMessage(form.fullname.name, errorFieldIsRequired, true, true);
-        // addErrorMessageAfterElem(form.fullname, errorMsgElem);
     }
     else if (!fullnameRegEx.test(fullnameValue)) {
         errorMsgElem = createErrorMessage(form.fullname.name, 'This field is invalid.', true, true);
-        // addErrorMessageAfterElem(form.fullname, errorDiv);
     }
 
-    addErrorMessageAfterElem(form.fullname, errorMsgElem);
-    setInvalid([form.fullname], errorMsgElem);
+    if (errorMsgElem) {
+        addErrorMessageAfterElem(form.fullname, errorMsgElem);
+        setInvalid([form.fullname], errorMsgElem);
+
+        return false;
+    }
+
+    return true;
 }
 
 function validateEmail(form) {
@@ -79,15 +122,19 @@ function validateEmail(form) {
 
     if (fieldIsEmpty(emailValue)) {
         errorMsgElem = createErrorMessage(form.email.name, errorFieldIsRequired, true, true);
-        // addErrorMessageAfterElem(form.email, errorDiv);
     }
     else if (!emailRegEx.test(emailValue)) {
         errorMsgElem = createErrorMessage(form.email.name, 'This email address is invalid.', true, true);
-        // addErrorMessageAfterElem(form.email, errorDiv);
     }
 
-    addErrorMessageAfterElem(form.email, errorMsgElem);
-    setInvalid([form.email], errorMsgElem);
+    if (errorMsgElem) {
+        addErrorMessageAfterElem(form.email, errorMsgElem);
+        setInvalid([form.email], errorMsgElem);
+
+        return false;
+    }
+
+    return true;
 }
 
 function validateDate(form) {
@@ -118,13 +165,13 @@ function validateDate(form) {
         errorMsgElem = createErrorMessage('date', errorFieldIsIncomplete);
         addErrorMessageAfterElem(dateLabel, errorMsgElem);
         setInvalid(dateInputs, errorMsgElem);
-        addLabelErrorClass(dateLabel);
+        addErrorClassToLabel(dateLabel);
 
-        return;
+        return false;
     }
 
     errorMsgElem = null;
-
+    //check format
     //ensure month is 1-12
     if (!monthRegEx.test(monthValue)) {
         errorMsgElem = createErrorMessage(form.month.name, 'Month is incorrect.');
@@ -143,9 +190,9 @@ function validateDate(form) {
 
     if (errorMsgElem) {
         addErrorMessageAfterElem(dateLabel, errorMsgElem);
-        addLabelErrorClass(dateLabel);
+        addErrorClassToLabel(dateLabel);
 
-        return;
+        return false;
     }
 
     errorMsgElem = null;
@@ -159,10 +206,12 @@ function validateDate(form) {
         errorMsgElem = createErrorMessage('date', 'Date in invalid.');
         addErrorMessageAfterElem(dateLabel, errorMsgElem);
         setInvalid(dateInputs, errorMsgElem);
-        addLabelErrorClass(dateLabel);
+        addErrorClassToLabel(dateLabel);
 
-        return;
+        return false;
     }
+
+    return true;
 }
 
 function validateTime(form) {
@@ -173,18 +222,17 @@ function validateTime(form) {
     const meridiemValue = form.meridiem.value;
     const timeInputs = document.querySelectorAll('.Time__container :is(input, select)');
     const timeLabel = document.querySelector('.Time__label');
-
     let errorMsgElem = null;
     let incompleteTimeInput = null;
 
     //check for completeness
-    if (!fieldIsEmpty(hourValue)) {
+    if (fieldIsEmpty(hourValue)) {
         incompleteTimeInput = form.hour;
     }
-    else if (!fieldIsEmpty(minuteValue)) {
+    else if (fieldIsEmpty(minuteValue)) {
         incompleteTimeInput = form.minute;
     }
-    else if (!fieldIsEmpty(meridiemValue)) {
+    else if (fieldIsEmpty(meridiemValue)) {
         incompleteTimeInput = form.meridiem;
     }
 
@@ -192,16 +240,76 @@ function validateTime(form) {
         errorMsgElem = createErrorMessage('time', errorFieldIsIncomplete);
         addErrorMessageAfterElem(timeLabel, errorMsgElem);
         setInvalid(timeInputs, errorMsgElem);
-        addLabelErrorClass(timeLabel);
+        addErrorClassToLabel(timeLabel);
 
-        return;
+        return false;
     }
+
+    errorMsgElem = null;
+    //check format
+    if (!hourRegEx.test(hourValue)) {
+        errorMsgElem = createErrorMessage(form.hour.name, 'Hour is incorrect.');
+        setInvalid([form.hour], errorMsgElem);
+    }
+    else if (!minRegEx.test(minuteValue)) {
+        errorMsgElem = createErrorMessage(form.minute.name, 'Minutes is incorrect');
+        setInvalid([form.minute], errorMsgElem);
+    }
+
+    if (errorMsgElem) {
+        addErrorMessageAfterElem(timeLabel, errorMsgElem);
+        addErrorClassToLabel(timeLabel);
+
+        return false;
+    }
+
+    return true;
 }
 
-function validateReservationTime(reservationDate) {
-    let today = new Date();
+function convertHourTo24HourFormat(hour, meridiem) {
+    let newHour = Number.parseInt(hour);
+    const meridiemAM = 'am';
+    const meridiemPM = 'pm';
+    const twelve = 12;
 
-    //TODO: ensure reservation date is not in the past
+    if (newHour == twelve) {
+        if (meridiem == meridiemAM) {
+            newHour = 0;
+        }
+    }
+    else {
+        if (meridiem == meridiemPM) {
+            newHour = newHour + twelve;
+        }
+    }
+
+    return newHour;
+}
+
+function validateReservationDateTime(reservationDate) {
+    const errorMsgElem = null;
+    const dateInputs = document.querySelector('.date__container input');
+    const timeInputs = document.querySelectorAll('.Time__container :is(input, select)');
+    const dateLabel = document.querySelector('.Date__label');
+    const timeLabel = document.querySelector('.Time__label');
+    let now = new Date();
+    now = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes());
+
+    if (now - reservationDate > 0) {
+        errorMsgElem = createErrorMessage('date', 'Date/time is in the past.');
+
+        setInvalid(dateInputs, errorMsgElem);
+        addErrorMessageAfterElem(dateLabel, errorMsgElem);
+        addErrorClassToLabel(dateLabel);
+
+        setInvalid(timeInputs, errorMsgElem);
+        addErrorMessageAfterElem(timeLabel, errorMsgElem);
+        addErrorClassToLabel(timeLabel);
+
+        return false;
+    }
+
+    return true;
 }
 
 function fieldIsEmpty(str) {
@@ -219,7 +327,7 @@ function addErrorMessageAfterElem(refElem, errorMsgElem) {
     refElem.after(errorMsgElem);
 }
 
-function addLabelErrorClass(labelElem) {
+function addErrorClassToLabel(labelElem) {
     labelElem.classList.add('Label--targetError');
 }
 
