@@ -5,8 +5,9 @@ const cateringTextHiddenClassName = 'CateringText--hidden';
 const cateringItemSelectedClassName = 'CateringItem--selected';
 const submitBtn = document.querySelector('.ReservationSubmit__button');
 const reservationForm = document.querySelector('.ReservationForm');
-const errorFieldIsRequired = "This field is required.";
-const errorFieldIsIncomplete = "This field is incomplete.";
+const errorFieldIsRequired = 'This field is required.';
+const errorFieldIsIncomplete = 'This field is incomplete.';
+const errorDateTimeIsInThePast = 'Date/time is in the past.';
 const yearInput = document.querySelector('#year');
 const decreaseBtn = document.querySelector('.Quantity--decrease');
 const increaseBtn = document.querySelector('.Quantity--increase');
@@ -45,17 +46,19 @@ cateringItemButtons.forEach(function (btn) {
 });
 
 updateQty(reserveQty);
-decreaseBtn.addEventListener('click', decreaseQty);
-increaseBtn.addEventListener('click', increaseQty);
+decreaseBtn?.addEventListener('click', decreaseQty);
+increaseBtn?.addEventListener('click', increaseQty);
 
 function updateQty(qty) {
-    qtyValue.textContent = qty;
+    if (qtyValue !== null && qtyUom !== null) {
+        qtyValue.textContent = qty;
 
-    if (qty === 1) {
-        qtyUom.textContent = 'person';
-    }
-    else {
-        qtyUom.textContent = 'people';
+        if (qty === 1) {
+            qtyUom.textContent = 'person';
+        }
+        else {
+            qtyUom.textContent = 'people';
+        }
     }
 }
 
@@ -73,7 +76,7 @@ function increaseQty() {
     }
 }
 
-reservationForm.addEventListener('submit', function (event) {
+reservationForm?.addEventListener('submit', function (event) {
     event.preventDefault();
     resetValidation(this);
     validateForm(this);
@@ -84,12 +87,17 @@ function validateForm(form) {
     validateEmail(form);
     const dateIsValid = validateDate(form);
     const timeIsValid = validateTime(form);
+    let reservationIsValid = false;
 
     if (dateIsValid && timeIsValid) {
         const newHour = convertHourTo24HourFormat(form.hour.value, form.meridiem.value);
         const rDate = new Date(form.year.value, form.month.value - 1, form.day.value, newHour, form.minute.value);
 
-        validateReservationDateTime(rDate);
+        reservationIsValid = validateReservationDateTime(rDate);
+    }
+
+    if (reservationIsValid) {
+        alert("Your reservation is confirmed!");
     }
 }
 
@@ -287,8 +295,8 @@ function convertHourTo24HourFormat(hour, meridiem) {
 }
 
 function validateReservationDateTime(reservationDate) {
-    const errorMsgElem = null;
-    const dateInputs = document.querySelector('.date__container input');
+    let errorMsgElem = null;
+    const dateInputs = document.querySelectorAll('.Date__container input');
     const timeInputs = document.querySelectorAll('.Time__container :is(input, select)');
     const dateLabel = document.querySelector('.Date__label');
     const timeLabel = document.querySelector('.Time__label');
@@ -296,12 +304,13 @@ function validateReservationDateTime(reservationDate) {
     now = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes());
 
     if (now - reservationDate > 0) {
-        errorMsgElem = createErrorMessage('date', 'Date/time is in the past.');
+        errorMsgElem = createErrorMessage('date', errorDateTimeIsInThePast);
 
         setInvalid(dateInputs, errorMsgElem);
         addErrorMessageAfterElem(dateLabel, errorMsgElem);
         addErrorClassToLabel(dateLabel);
 
+        errorMsgElem = createErrorMessage('time', errorDateTimeIsInThePast);
         setInvalid(timeInputs, errorMsgElem);
         addErrorMessageAfterElem(timeLabel, errorMsgElem);
         addErrorClassToLabel(timeLabel);

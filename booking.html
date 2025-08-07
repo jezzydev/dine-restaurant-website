@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./styles/app.css" />
     <link rel="stylesheet" href="./styles/section.css" />
     <link rel="stylesheet" href="./styles/booking.css" />
-    <link rel="stylesheet" href="./styles/reservation.css" />
+    <!-- <link rel="stylesheet" href="./styles/reservation.css" /> -->
     <link
       rel="icon"
       type="image/png"
@@ -17,113 +17,112 @@
     <title>Frontend Mentor | Dine Website Challenge</title>
   </head>
   <body>
-    <section class="Section Section--dark BookingHero__section">
-      <div class="Section__container">
-        <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
-        <div class="Section__content">
-          <div class="Section__text">
-            <h1 class="Section__title">Reservations</h1>
-            <p class="Section__description">
-              We can’t wait to host you. If you have any special requirements
-              please feel free to call on the phone number below. We’ll be happy
-              to accommodate you.
-            </p>
-          </div>
-          <a class="LinkCta LinkCta--dark" href="#Reservation-section"
-            >Reserve a Place</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="Reservation-section"
-      class="Section Section--light Reservation__section"
-    >
-      <div class="Section__container">
-        <div class="Section__content">
-          <form method="POST" action="" class="ReservationForm" novalidate>
-            <div class="FormItem">
-              <div class="FormItem__container">
-                <div class="FormItem__inputContainer">
-                  <input id="fullname" name="fullname" type="text" placeholder="Name"></input>
-                </div>
-              </div>
+    <div class="container">
+      <section class="Section Section--dark BookingHero__section">
+        <div class="Section__container">
+          <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
+          <div class="Section__content">
+            <div class="Section__text">
+              <h1 class="Section__title">Reservations</h1>
+              <p class="Section__description">
+                We can’t wait to host you. If you have any special requirements
+                please feel free to call on the phone number below. We’ll be happy
+                to accommodate you.
+              </p>
             </div>
-            <div class="FormItem">
-              <div class="FormItem__container">
-                <div class="FormItem__inputContainer">
-                  <input id="email" name="email" type="email" placeholder="Email"></input>
-                </div>
-              </div>
-            </div>
-            <div class="FormItem">
-              <div class="FormItem__container">
-                <div class="FormItem__labelContainer"><label class="Label Date__label" for="month">Pick a date</label></div>
-                <div class="FormItem__inputContainer">
-                  <div class="Date__container">
-                    <input id="month" name="month" type="text" minlength="1" maxlength="2"  placeholder="MM"></input>
-                    <input id="day" name="day" type="text" minlength="1" maxlength="2" placeholder="DD"></input>
-                    <input id="year" name="year" type="text" minlength="4" maxlength="4" placeholder="YYYY"></input>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="FormItem">
-              <div class="FormItem__container">
-                <div class="FormItem__labelContainer"><label class="Label Time__label" for="hour">Pick a time</label></div>
-                <div class="FormItem__inputContainer">
-                  <div class="Time__container">
-                    <input id="hour" name="hour" type="text" minLength="1" maxLength="2" placeholder="09"></input>
-                    <input id="minute" name="minute" type="text" minLength="1" maxLength="2" placeholder="00"></input>
-                    <select id="meridiem" name="meridiem" class="Time__select">
-                      <button><selectedcontent></selectedcontent></button>
-                      <option value="am">AM</option>
-                      <option value="pm">PM</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>            
-            <div class="FormItem">
-              <div class="FormItem__container">
-                <div class="FormItem__inputContainer">
-                  <div class="Quantity__container">
-                    <button class="Quantity__btn Quantity--decrease" type="button"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
-                    <p class="Quantity__text"><span class="Quantity__value"></span>&nbsp;<span class="Quantity__uom"></span></p>
-                    <button class="Quantity__btn Quantity--increase" type="button"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="FormItem">
-              <div class="FormItem__container"><button class="LinkCta LinkCta--light ReservationSubmit__button" type="submit">Make Reservation</button></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer class="Section Section--dark Footer__section">
-      <div class="Footer__container">
-        <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
-        <div class="Section__content">
-          <div class="Section__text">
-            <div class="Footer__contacts">
-              <p>Marthwaite, Sedbergh</p>
-              <p>Cumbria</p>
-              <p>+00 44 123 4567</p>
-            </div>
-
-            <div class="Footer__hours">
-              <p>Open Times</p>
-              <p>Mon - Fri: 09:00 AM - 10:00 PM</p>
-              <p>Sat - Sun: 09:00 AM - 11:30 PM</p>
-            </div>
+            <a class="LinkCta LinkCta--dark" href="#Reservation-section"
+              >Reserve a Place</a
+            >
           </div>
         </div>
-      </div>
-    </footer>
+      </section>
+      <section
+        id="Reservation-section"
+        class="Section Section--light Reservation__section Section--patternCurveBottomRight"
+      >
+        <div class="Section__container ReservationContainer--overlap ReservationContainer--overlapTop">
+          <div class="Section__content patternLines patternLines--left">
+            <form method="POST" action="" class="ReservationForm" novalidate>
+              <div class="FormItem">
+                <div class="FormItem__container">
+                  <div class="FormItem__inputContainer">
+                    <input id="fullname" name="fullname" type="text" placeholder="Name"></input>
+                  </div>
+                </div>
+              </div>
+              <div class="FormItem">
+                <div class="FormItem__container">
+                  <div class="FormItem__inputContainer">
+                    <input id="email" name="email" type="email" placeholder="Email"></input>
+                  </div>
+                </div>
+              </div>
+              <div class="FormItem">
+                <div class="FormItem__container">
+                  <div class="FormItem__labelContainer"><label class="Label Date__label" for="month">Pick a date</label></div>
+                  <div class="FormItem__inputContainer">
+                    <div class="Date__container">
+                      <input id="month" name="month" type="text" minlength="1" maxlength="2"  placeholder="MM"></input>
+                      <input id="day" name="day" type="text" minlength="1" maxlength="2" placeholder="DD"></input>
+                      <input id="year" name="year" type="text" minlength="4" maxlength="4" placeholder="YYYY"></input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="FormItem">
+                <div class="FormItem__container">
+                  <div class="FormItem__labelContainer"><label class="Label Time__label" for="hour">Pick a time</label></div>
+                  <div class="FormItem__inputContainer">
+                    <div class="Time__container">
+                      <input id="hour" name="hour" type="text" minLength="1" maxLength="2" placeholder="09"></input>
+                      <input id="minute" name="minute" type="text" minLength="1" maxLength="2" placeholder="00"></input>
+                      <select id="meridiem" name="meridiem" class="Time__select">
+                        <button><selectedcontent></selectedcontent></button>
+                        <option value="am">AM</option>
+                        <option value="pm">PM</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="FormItem">
+                <div class="FormItem__container">
+                  <div class="FormItem__inputContainer">
+                    <div class="Quantity__container">
+                      <button class="Quantity__btn Quantity--decrease" type="button"><img src="./images/icons/icon-minus.svg" alt="Minus button"/></button>
+                      <p class="Quantity__text"><span class="Quantity__value"></span>&nbsp;<span class="Quantity__uom"></span></p>
+                      <button class="Quantity__btn Quantity--increase" type="button"><img src="./images/icons/icon-plus.svg" alt="Plus button"/></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="FormItem">
+                <div class="FormItem__container"><button class="LinkCta LinkCta--dark ReservationSubmit__button" type="submit">Make Reservation</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="Section Section--dark Footer__section">
+        <div class="Section__container">
+          <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
+          <div class="Section__content">
+            <div class="Section__text">
+              <div class="Footer__contacts">
+                <p>Marthwaite, Sedbergh</p>
+                <p>Cumbria</p>
+                <p>+00 44 123 4567</p>
+              </div>
+              <div class="Footer__hours">
+                <p>Open Times</p>
+                <p>Mon - Fri: 09:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 09:00 AM - 11:30 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
     <script src="./scripts/app.js"></script>
   </body>
 </html>

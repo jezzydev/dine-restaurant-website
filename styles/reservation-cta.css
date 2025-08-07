@@ -1,8 +1,66 @@
-/* ReservationCta section */
 .ReservationCta__section {
-  background: var(--bg-ready-mobile) center no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: var(--bg-ready-mobile);
 }
 
 .ReservationCta__section .Section__container {
+  grid-template-areas: "section-content";
+}
+
+.ReservationCta__section .Section__content {
+  max-width: 100%;
+  grid-area: section-content;
   gap: 20px;
+}
+
+@media (min-width: 376px) {
+  .ReservationCta__section {
+    background-image: var(--bg-ready-mobile2x);
+  }
+}
+
+@media (min-width: 500px) {
+  .ReservationCta__section {
+    background-image: var(--bg-ready-tablet);
+  }
+
+  .ReservationCta__section .Section__content {
+    gap: 24px;
+  }
+
+  .ReservationCta__section .Section__text {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .ReservationCta__section {
+    background-image: var(--bg-ready-tablet2x);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ReservationCta__section {
+    background-image: var(--bg-ready-desktop);
+  }
+
+  .ReservationCta__section .Section__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+  }
+
+  .ReservationCta__section .LinkCta {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 1441px) {
+  .ReservationCta__section {
+    background-image: var(--bg-ready-desktop2x);
+  }
 }

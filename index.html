@@ -20,253 +20,462 @@
     <title>Frontend Mentor | Dine Website Challenge</title>
   </head>
   <body>
-    <section class="Section Section--dark Hero__section">
-      <div class="Section__container">
-        <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
-        <div class="Section__content">
-          <div class="Section__text">
-            <h1 class="Section__title">
-              Exquisite dining <span class="Section__subtitle">since 1989</span>
-            </h1>
-            <p class="Section__description">
-              Experience our seasonal menu in beautiful country surroundings.
-              Eat the freshest produce from the comfort of our farmhouse.
-            </p>
-          </div>
-          <a class="LinkCta LinkCta--dark" href="booking.html">Book a table</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="Section Section--light Features__section">
-      <div
-        class="Section__container FeaturesContainer--overlap FeaturesContainer--overlapTop"
-      >
-        <img
-          class="Section__image"
-          alt="Section image"
-          src="./images/homepage/enjoyable-place-mobile.jpg"
-        />
-        <div class="Section__content">
-          <img
-            class="Section__divider"
-            alt="Divider"
-            src="./images/patterns/pattern-divide.svg"
-          />
-          <div class="Section__text">
-            <h2 class="Section__title">
-              Enjoyable place
-              <span class="Section__subtitle">for all the family</span>
-            </h2>
-            <p class="Section__description">
-              Our relaxed surroundings make dining with us a great experience
-              for everyone. We can even arrange a tour of the farm before your
-              meal.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="Section Section--light Features__section">
-      <div class="Section__container">
-        <img
-          class="Section__image"
-          alt="Section image"
-          src="./images/homepage/locally-sourced-mobile.jpg"
-        />
-        <div class="Section__content">
-          <img
-            class="Section__divider"
-            alt="Divider"
-            src="./images/patterns/pattern-divide.svg"
-          />
-          <div class="Section__text">
-            <h2 class="Section__title">The most locally sourced food</h2>
-            <p class="Section__description">
-              All our ingredients come directly from our farm or local fishery.
-              So you can be sure that you’re eating the freshest, most
-              sustainable food.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="Section Section--dark Menu__section">
-      <div class="Section__container">
-        <div class="Section__content">
-          <img
-            class="Section__divider"
-            alt="Divider"
-            src="./images/patterns/pattern-divide.svg"
-          />
-          <div class="Section__text">
-            <h2 class="Section__title">A few highlights from our menu</h2>
-            <p class="Section__description">
-              We cater for all dietary requirements, but here’s a glimpse at
-              some of our diner’s favourites. Our menu is revamped every season.
-            </p>
-          </div>
-        </div>
-
-        <ul class="Menu__list">
-          <li class="MenuItem">
-            <img
-              class="MenuItem__image"
-              alt="Menu item image"
-              src="./images/homepage/salmon-mobile.jpg"
-            />
-            <div class="MenuItem__text">
-              <h3 class="MenuItem__title">Seared Salmon Fillet</h3>
-              <p class="MenuItem__description">
-                Our locally sourced salmon served with a refreshing buckwheat
-                summer salad.
+    <div class="container">
+      <section class="Section Section--dark Hero__section">
+        <div class="Section__container">
+          <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
+          <div class="Section__content">
+            <div class="Section__text">
+              <h1 class="Section__title">
+                Exquisite dining<span class="Section__subtitle"
+                  >since 1989</span
+                >
+              </h1>
+              <p class="Section__description">
+                Experience our seasonal menu in beautiful country surroundings.
+                Eat the freshest produce from the comfort of our farmhouse.
               </p>
             </div>
-          </li>
-          <li class="MenuItem">
-            <img
-              class="MenuItem__image"
-              alt="Menu item image"
-              src="./images/homepage/beef-mobile.jpg"
-            />
-            <div class="MenuItem__text">
-              <h3 class="MenuItem__title">Rosemary Filet Mignon</h3>
-              <p class="MenuItem__description">
-                Our prime beef served to your taste with a delicious choice of
-                seasonal sides.
-              </p>
-            </div>
-          </li>
-          <li class="MenuItem">
-            <img
-              class="MenuItem__image"
-              alt="Menu item image"
-              src="./images/homepage/chocolate-mobile.jpg"
-            />
-            <div class="MenuItem__text">
-              <h3 class="MenuItem__title">Summer Fruit Chocolate Mousse</h3>
-              <p class="MenuItem__description">
-                Creamy mousse combined with summer fruits and dark chocolate
-                shavings.
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="Section Section--light Catering__section">
-      <div class="Section__container">
-        <img
-          data-catering="family-gathering"
-          class="Section__image CateringImage"
-          alt="Section image"
-          src="./images/homepage/family-gathering-mobile.jpg"
-        />
-        <img
-          data-catering="special-events"
-          class="Section__image CateringImage CateringImage--hidden"
-          alt="Section image"
-          src="./images/homepage/special-events-mobile.jpg"
-        />
-        <img
-          data-catering="social-events"
-          class="Section__image CateringImage CateringImage--hidden"
-          alt="Section image"
-          src="./images/homepage/social-events-mobile.jpg"
-        />
-
-        <div class="Section__content">
-          <ul class="Catering__list">
-            <li
-              class="CateringItem CateringItem--selected"
-              data-catering="family-gathering"
+            <a class="LinkCta LinkCta--transparent" href="booking.html"
+              >Book a table</a
             >
-              <button class="CateringItem__button" type="button">
-                Family Gathering
-              </button>
+          </div>
+        </div>
+      </section>
+      <section
+        class="Section Section--light Features__section Section--patternCurveTopRight"
+      >
+        <div
+          class="Section__container FeaturesContainer--overlap FeaturesContainer--overlapTop"
+        >
+          <div class="Section__imageWrapper">
+            <picture>
+              <source
+                media="(width <= 375px)"
+                srcset="./images/homepage/enjoyable-place-mobile.jpg"
+              />
+              <source
+                media="(width < 500px)"
+                srcset="./images/homepage/enjoyable-place-mobile@2x.jpg"
+              />
+              <source
+                media="(width < 769px)"
+                srcset="./images/homepage/enjoyable-place-tablet.jpg"
+              />
+              <source
+                media="(width < 1200px)"
+                srcset="./images/homepage/enjoyable-place-tablet@2x.jpg"
+              />
+              <source
+                media="(width <= 1440px)"
+                srcset="./images/homepage/enjoyable-place-desktop.jpg"
+              />
+              <source
+                media="(width > 1440px)"
+                srcset="./images/homepage/enjoyable-place-desktop@2x.jpg"
+              />
+              <img
+                class="Section__image"
+                alt="Section image"
+                src="./images/homepage/enjoyable-place-mobile.jpg"
+              />
+            </picture>
+          </div>
+          <div class="Section__content">
+            <img
+              class="Section__divider"
+              alt="Divider"
+              src="./images/patterns/pattern-divide.svg"
+            />
+            <div class="Section__text">
+              <h2 class="Section__title">
+                Enjoyable place
+                <span class="Section__subtitle">for all the family</span>
+              </h2>
+              <p class="Section__description">
+                Our relaxed surroundings make dining with us a great experience
+                for everyone. We can even arrange a tour of the farm before your
+                meal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="Section Section--light Features__section Section--patternCurveTopLeft"
+      >
+        <div
+          class="Section__container Section__container--reverse FeaturesContainer--overlap FeaturesContainer--overlapBottom"
+        >
+          <div class="Section__imageWrapper patternLines patternLines--right">
+            <picture>
+              <source
+                media="(width <= 375px)"
+                srcset="./images/homepage/locally-sourced-mobile.jpg"
+              />
+              <source
+                media="(width < 500px)"
+                srcset="./images/homepage/locally-sourced-mobile@2x.jpg"
+              />
+              <source
+                media="(width < 769px)"
+                srcset="./images/homepage/locally-sourced-tablet.jpg"
+              />
+              <source
+                media="(width < 1200px)"
+                srcset="./images/homepage/locally-sourced-tablet@2x.jpg"
+              />
+              <source
+                media="(width <= 1440px)"
+                srcset="./images/homepage/locally-sourced-desktop.jpg"
+              />
+              <source
+                media="(width > 1440px)"
+                srcset="./images/homepage/locally-sourced-desktop@2x.jpg"
+              />
+              <img
+                class="Section__image"
+                alt="Section image"
+                src="./images/homepage/locally-sourced-mobile.jpg"
+              />
+            </picture>
+          </div>
+          <div class="Section__content">
+            <img
+              class="Section__divider"
+              alt="Divider"
+              src="./images/patterns/pattern-divide.svg"
+            />
+            <div class="Section__text">
+              <h2 class="Section__title">
+                The most locally<span class="Section__subtitle"
+                  >sourced food</span
+                >
+              </h2>
+              <p class="Section__description">
+                All our ingredients come directly from our farm or local
+                fishery. So you can be sure that you’re eating the freshest,
+                most sustainable food.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="Section Section--dark Menu__section">
+        <div class="Section__container">
+          <div class="Section__content">
+            <img
+              class="Section__divider"
+              alt="Divider"
+              src="./images/patterns/pattern-divide.svg"
+            />
+            <div class="Section__text">
+              <h2 class="Section__title">
+                A few highlights from<span class="Section__subtitle"
+                  >our menu</span
+                >
+              </h2>
+              <p class="Section__description">
+                We cater for all dietary requirements, but here’s a glimpse at
+                some of our diner’s favourites. Our menu is revamped every
+                season.
+              </p>
+            </div>
+          </div>
+          <ul class="Menu__list">
+            <li class="MenuItem">
+              <picture>
+                <source
+                  media="(width <= 375px)"
+                  srcset="./images/homepage/salmon-mobile.jpg"
+                />
+                <source
+                  media="(width < 769px)"
+                  srcset="./images/homepage/salmon-mobile@2x.jpg"
+                />
+                <source
+                  media="(width <= 1440px)"
+                  srcset="./images/homepage/salmon-desktop-tablet.jpg"
+                />
+                <source
+                  media="(width > 1440px)"
+                  srcset="./images/homepage/salmon-desktop-tablet@2x.jpg"
+                />
+                <img
+                  class="MenuItem__image"
+                  alt="Menu item image"
+                  src="./images/homepage/salmon-mobile.jpg"
+                />
+              </picture>
+              <div class="MenuItem__text">
+                <h3 class="MenuItem__title">Seared Salmon Fillet</h3>
+                <p class="MenuItem__description">
+                  Our locally sourced salmon served with a refreshing buckwheat
+                  summer salad.
+                </p>
+              </div>
             </li>
-            <li class="CateringItem" data-catering="special-events">
-              <button class="CateringItem__button" type="button">
-                Special Events
-              </button>
+            <li class="MenuItem">
+              <picture>
+                <source
+                  media="(width <= 375px)"
+                  srcset="./images/homepage/beef-mobile.jpg"
+                />
+                <source
+                  media="(width < 769px)"
+                  srcset="./images/homepage/beef-mobile@2x.jpg"
+                />
+                <source
+                  media="(width <= 1440px)"
+                  srcset="./images/homepage/beef-desktop-tablet.jpg"
+                />
+                <source
+                  media="(width > 1440px)"
+                  srcset="./images/homepage/beef-desktop-tablet@2x.jpg"
+                />
+                <img
+                  class="MenuItem__image"
+                  alt="Menu item image"
+                  src="./images/homepage/beef-mobile.jpg"
+                />
+              </picture>
+              <div class="MenuItem__text">
+                <h3 class="MenuItem__title">Rosemary Filet Mignon</h3>
+                <p class="MenuItem__description">
+                  Our prime beef served to your taste with a delicious choice of
+                  seasonal sides.
+                </p>
+              </div>
             </li>
-            <li class="CateringItem" data-catering="social-events">
-              <button class="CateringItem__button" type="button">
-                Social Events
-              </button>
+            <li class="MenuItem">
+              <picture>
+                <source
+                  media="(width <= 375px)"
+                  srcset="./images/homepage/chocolate-mobile.jpg"
+                />
+                <source
+                  media="(width < 769px)"
+                  srcset="./images/homepage/chocolate-mobile@2x.jpg"
+                />
+                <source
+                  media="(width <= 1440px)"
+                  srcset="./images/homepage/chocolate-desktop-tablet.jpg"
+                />
+                <source
+                  media="(width > 1440px)"
+                  srcset="./images/homepage/chocolate-desktop-tablet@2x.jpg"
+                />
+                <img
+                  class="MenuItem__image"
+                  alt="Menu item image"
+                  src="./images/homepage/chocolate-mobile.jpg"
+                />
+              </picture>
+              <div class="MenuItem__text">
+                <h3 class="MenuItem__title">Summer Fruit Chocolate Mousse</h3>
+                <p class="MenuItem__description">
+                  Creamy mousse combined with summer fruits and dark chocolate
+                  shavings.
+                </p>
+              </div>
             </li>
           </ul>
-          <div
-            class="Section__text CateringText"
-            data-catering="family-gathering"
-          >
-            <h2 class="Section__title">Family Gathering</h2>
-            <p class="Section__description">
-              We love catering for entire families. So please bring everyone
-              along for a special meal with your loved ones. We’ll provide a
-              memorable experience for all.
-            </p>
-          </div>
-
-          <div
-            class="Section__text CateringText CateringText--hidden"
-            data-catering="special-events"
-          >
-            <h2 class="Section__title">Special Events</h2>
-            <p class="Section__description">
-              Whether it’s a romantic dinner or special date you’re celebrating
-              with others we’ll look after you. We’ll be sure to mark your
-              special date with an unforgettable meal.
-            </p>
-          </div>
-          <div
-            class="Section__text CateringText CateringText--hidden"
-            data-catering="social-events"
-          >
-            <h2 class="Section__title">Social Events</h2>
-            <p class="Section__description">
-              Are you looking to have a larger social event? No problem! We’re
-              more than happy to cater for big parties. We’ll work with you to
-              make your event a hit with everyone.
-            </p>
-          </div>
-
-          <a class="LinkCta LinkCta--light" href="booking.html">Book a table</a>
         </div>
-      </div>
-    </section>
-
-    <section class="Section Section--dark ReservationCta__section">
-      <div class="Section__container">
-        <div class="Section__text">
-          <h2 class="Section__title">Ready to make a reservation?</h2>
-        </div>
-        <a class="LinkCta LinkCta--dark" href="booking.html">Book a table</a>
-      </div>
-    </section>
-    <footer class="Section Section--dark Footer__section">
-      <div class="Footer__container">
-        <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
-        <div class="Section__content">
-          <div class="Section__text">
-            <div class="Footer__contacts">
-              <p>Marthwaite, Sedbergh</p>
-              <p>Cumbria</p>
-              <p>+00 44 123 4567</p>
+      </section>
+      <section
+        class="Section Section--light Catering__section Section--patternCurveTopRight"
+      >
+        <div class="Section__container">
+          <div class="Section__imageWrapper patternLines patternLines--left">
+            <picture>
+              <source
+                media="(width <= 375px)"
+                srcset="./images/homepage/family-gathering-mobile.jpg"
+              />
+              <source
+                media="(width < 500px)"
+                srcset="./images/homepage/family-gathering-mobile@2x.jpg"
+              />
+              <source
+                media="(width < 769px)"
+                srcset="./images/homepage/family-gathering-tablet.jpg"
+              />
+              <source
+                media="(width < 1200px)"
+                srcset="./images/homepage/family-gathering-tablet@2x.jpg"
+              />
+              <source
+                media="(width <= 1440px)"
+                srcset="./images/homepage/family-gathering-desktop.jpg"
+              />
+              <source
+                media="(width > 1440px)"
+                srcset="./images/homepage/family-gathering-desktop@2x.jpg"
+              />
+              <img
+                data-catering="family-gathering"
+                class="Section__image CateringImage"
+                alt="Section image"
+                src="./images/homepage/family-gathering-mobile.jpg"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(width <= 375px)"
+                srcset="./images/homepage/special-events-mobile.jpg"
+              />
+              <source
+                media="(width < 500px)"
+                srcset="./images/homepage/special-events-mobile@2x.jpg"
+              />
+              <source
+                media="(width < 769px)"
+                srcset="./images/homepage/special-events-tablet.jpg"
+              />
+              <source
+                media="(width < 1200px)"
+                srcset="./images/homepage/special-events-tablet@2x.jpg"
+              />
+              <source
+                media="(width <= 1440px)"
+                srcset="./images/homepage/special-events-desktop.jpg"
+              />
+              <source
+                media="(width > 1440px)"
+                srcset="./images/homepage/special-events-desktop@2x.jpg"
+              />
+              <img
+                data-catering="special-events"
+                class="Section__image CateringImage CateringImage--hidden"
+                alt="Section image"
+                src="./images/homepage/special-events-mobile.jpg"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(width <= 375px)"
+                srcset="./images/homepage/social-events-mobile.jpg"
+              />
+              <source
+                media="(width < 500px)"
+                srcset="./images/homepage/social-events-mobile@2x.jpg"
+              />
+              <source
+                media="(width < 769px)"
+                srcset="./images/homepage/social-events-tablet.jpg"
+              />
+              <source
+                media="(width < 1200px)"
+                srcset="./images/homepage/social-events-tablet@2x.jpg"
+              />
+              <source
+                media="(width <= 1440px)"
+                srcset="./images/homepage/social-events-desktop.jpg"
+              />
+              <source
+                media="(width > 1440px)"
+                srcset="./images/homepage/social-events-desktop@2x.jpg"
+              />
+              <img
+                data-catering="social-events"
+                class="Section__image CateringImage CateringImage--hidden"
+                alt="Section image"
+                src="./images/homepage/social-events-mobile.jpg"
+              />
+            </picture>
+          </div>
+          <div class="Section__content">
+            <ul class="Catering__list">
+              <li
+                class="CateringItem CateringItem--selected"
+                data-catering="family-gathering"
+              >
+                <button class="CateringItem__button" type="button">
+                  Family Gathering
+                </button>
+              </li>
+              <li class="CateringItem" data-catering="special-events">
+                <button class="CateringItem__button" type="button">
+                  Special Events
+                </button>
+              </li>
+              <li class="CateringItem" data-catering="social-events">
+                <button class="CateringItem__button" type="button">
+                  Social Events
+                </button>
+              </li>
+            </ul>
+            <div
+              class="Section__text CateringText"
+              data-catering="family-gathering"
+            >
+              <h2 class="Section__title">Family Gathering</h2>
+              <p class="Section__description">
+                We love catering for entire families. So please bring everyone
+                along for a special meal with your loved ones. We’ll provide a
+                memorable experience for all.
+              </p>
             </div>
-
-            <div class="Footer__hours">
-              <p>Open Times</p>
-              <p>Mon - Fri: 09:00 AM - 10:00 PM</p>
-              <p>Sat - Sun: 09:00 AM - 11:30 PM</p>
+            <div
+              class="Section__text CateringText CateringText--hidden"
+              data-catering="special-events"
+            >
+              <h2 class="Section__title">Special Events</h2>
+              <p class="Section__description">
+                Whether it’s a romantic dinner or special date you’re
+                celebrating with others we’ll look after you. We’ll be sure to
+                mark your special date with an unforgettable meal.
+              </p>
+            </div>
+            <div
+              class="Section__text CateringText CateringText--hidden"
+              data-catering="social-events"
+            >
+              <h2 class="Section__title">Social Events</h2>
+              <p class="Section__description">
+                Are you looking to have a larger social event? No problem! We’re
+                more than happy to cater for big parties. We’ll work with you to
+                make your event a hit with everyone.
+              </p>
+            </div>
+            <a class="LinkCta LinkCta--dark" href="booking.html"
+              >Book a table</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="Section Section--dark ReservationCta__section">
+        <div class="Section__container">
+          <div class="Section__content">
+            <div class="Section__text">
+              <h2 class="Section__title">Ready to make a reservation?</h2>
+            </div>
+            <a class="LinkCta LinkCta--transparent" href="booking.html"
+              >Book a table</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer class="Section Section--dark Footer__section">
+        <div class="Section__container">
+          <img class="Logo" alt="Dine logo" src="./images/logo.svg" />
+          <div class="Section__content">
+            <div class="Section__text">
+              <div class="Footer__contacts">
+                <p>Marthwaite, Sedbergh</p>
+                <p>Cumbria</p>
+                <p>+00 44 123 4567</p>
+              </div>
+              <div class="Footer__hours">
+                <p>Open Times</p>
+                <p>Mon - Fri: 09:00 AM - 10:00 PM</p>
+                <p>Sat - Sun: 09:00 AM - 11:30 PM</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
     <script src="./scripts/app.js"></script>
   </body>
 </html>

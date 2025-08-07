@@ -1,18 +1,73 @@
 .Section.Hero__section {
-  background: url(../images/homepage/hero-bg-mobile.jpg) no-repeat,
-    var(--color-mirage);
+  position: relative;
+  background-image: var(--bg-hero-mobile);
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-cod-gray);
   padding: 232px 24px 152px;
+  z-index: 50;
+}
+
+@media (min-width: 376px) {
+  .Section.Hero__section {
+    background-image: var(--bg-hero-mobile2x);
+    padding-top: 290px;
+  }
+}
+
+@media (min-width: 500px) {
+  .Section.Hero__section {
+    background-image: var(--bg-hero-tablet);
+    padding: 374px 40px 216px;
+  }
+}
+
+@media (min-width: 769px) {
+  .Section.Hero__section {
+    background-image: var(--bg-hero-tablet2x);
+  }
+}
+
+@media (min-width: 900px) {
+  .Section.Hero__section {
+    padding-top: 390px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Section.Hero__section {
+    background-image: var(--bg-hero-desktop);
+    background-position: top right;
+    background-size: cover;
+    padding: 65px 0px 200px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .Section.Hero__section {
+    background-image: var(--bg-hero-desktop2x);
+  }
 }
 
 .Hero__section .Section__container {
   display: grid;
   gap: 36px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "section-image"
+    "section-content";
   justify-content: center;
   justify-items: center;
   align-items: center;
 }
 
+.Hero__section .Logo {
+  grid-area: section-image;
+}
+
 .Hero__section .Section__content {
+  grid-area: section-content;
   gap: 53px;
 }
 
@@ -24,4 +79,43 @@
 .Hero__section .Section__subtitle {
   font: var(--fontHeadingXL-mobile);
   letter-spacing: var(--letterSpacingHeroTitle);
+}
+
+@media (min-width: 500px) {
+  .Hero__section .Section__title,
+  .Hero__section .Section__subtitle {
+    font: var(--fontHeadingXL-tablet);
+    --letterSpacingHeroTitle: -0.6px;
+  }
+
+  .Section__description {
+    font: var(--fontBody1);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Hero__section .Section__container {
+    gap: 153px;
+    justify-content: start;
+    justify-items: start;
+    align-items: center;
+  }
+
+  .Hero__section .Section__content {
+    gap: 40px;
+  }
+
+  .Hero__section .Section__text {
+    gap: 10px;
+  }
+
+  .Hero__section .Section__description {
+    max-width: 445px;
+  }
+
+  .Hero__section .Section__title,
+  .Hero__section .Section__subtitle {
+    font: var(--fontHeadingXL-desktop);
+    --letterSpacingHeroTitle: -1px;
+  }
 }

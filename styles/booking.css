@@ -1,16 +1,34 @@
 .Section.BookingHero__section {
-  background: url(../images/booking/hero-bg-mobile.jpg) no-repeat;
+  position: relative;
+  background-image: var(--bg-booking-hero-mobile);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: var(--bookingHeroSectionPaddingTop)
+    var(--bookingHeroSectionHorizontalPadding)
+    var(--bookingHeroSectionPaddingBottom);
+  z-index: var(--bookingHeroZindex);
 }
 
 .BookingHero__section .Section__container {
+  --bookingHeroSectionContainerGap: 44px;
   display: grid;
-  gap: 44px;
+  gap: var(--bookingHeroSectionContainerGap);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "section-image"
+    "section-content";
   justify-content: center;
   justify-items: center;
   align-items: center;
 }
 
+.BookingHero__section .Logo {
+  grid-area: section-image;
+}
+
 .BookingHero__section .Section__content {
+  grid-area: section-content;
   gap: 19px;
 }
 
@@ -21,4 +39,351 @@
 .BookingHero__section .Section__title {
   font: var(--fontHeadingXL-mobile);
   letter-spacing: var(--letterSpacingHeroTitle);
+}
+
+/* Reservation Section */
+.Reservation__section {
+  position: relative;
+  --overlapWidth: 140px;
+  --bottomPadding: 86px;
+  padding: 0 24px var(--bottomPadding);
+}
+
+.Reservation__section .Section__container {
+  grid-template-areas: "section-content";
+}
+
+.ReservationContainer--overlap {
+  position: relative;
+}
+
+.ReservationContainer--overlapTop {
+  z-index: var(--reservationContainerZindex);
+  margin-top: calc(-1 * var(--overlapWidth));
+}
+
+@media (min-width: 376px) {
+  .Section.BookingHero__section {
+    background-image: var(--bg-booking-hero-mobile2x);
+  }
+}
+
+@media (min-width: 500px) {
+  .Section {
+    --bookingHeroSectionPaddingTop: 56px;
+    --bookingHeroSectionHorizontalPadding: 40px;
+    --bookingHeroSectionPaddingBottom: 268px;
+  }
+
+  .Section.BookingHero__section {
+    background-image: var(--bg-booking-hero-tablet);
+    padding: var(--bookingHeroSectionPaddingTop)
+      var(--bookingHeroSectionHorizontalPadding)
+      var(--bookingHeroSectionPaddingBottom);
+  }
+
+  .BookingHero__section .Section__container {
+    --bookingHeroSectionContainerGap: 70px;
+    justify-content: start;
+    justify-items: start;
+    align-items: center;
+  }
+
+  .BookingHero__section .Section__text {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .BookingHero__section .Section__title,
+  .BookingHero__section .Section__subtitle {
+    font: var(--fontHeadingXL-tablet);
+    --letterSpacingHeroTitle: -0.6px;
+  }
+
+  .BookingHero__section .LinkCta {
+    display: none;
+  }
+
+  .Reservation__section {
+    --bottomPadding: 120px;
+  }
+}
+
+@media (min-width: 769px) {
+  .Section.BookingHero__section {
+    background-image: var(--bg-booking-hero-tablet2x);
+  }
+
+  .Section.Reservation__section {
+    --overlapWidth: 200px;
+  }
+
+  .ReservationContainer--overlapTop {
+    margin-top: calc(-1 * var(--overlapWidth));
+  }
+}
+
+@media (min-width: 1200px) {
+  .Section {
+    --bookingHeroSectionPaddingTop: 65px;
+    --bookingHeroSectionPaddingBottom: 154px;
+    --bookingHeroSectionHorizontalPadding: 0;
+  }
+
+  .Section.BookingHero__section {
+    background-image: var(--bg-booking-hero-desktop);
+    background-position: top right;
+
+    padding: var(--bookingHeroSectionPaddingTop)
+      var(--bookingHeroSectionHorizontalPadding)
+      var(--bookingHeroSectionPaddingBottom);
+  }
+
+  .BookingHero__section .Section__container {
+    gap: 153px;
+  }
+
+  .BookingHero__section .Section__description {
+    max-width: 445px;
+  }
+
+  .BookingHero__section .Section__text {
+    gap: 18px;
+  }
+
+  .BookingHero__section .Section__title,
+  .BookingHero__section .Section__subtitle {
+    font: var(--fontHeadingXL-desktop);
+    --letterSpacingHeroTitle: -1px;
+  }
+
+  .Section.Reservation__section {
+    --overlapWidth: calc(var(--bookingHeroSectionPaddingBottom) + 188px);
+  }
+
+  .Reservation__section.Section--patternCurveBottomRight {
+    background: bottom 0px left 0px / var(--patternCurveTopWidth)
+      var(--patternCurveTopHeight) no-repeat var(--pattern-curve-bottom-right);
+  }
+
+  .ReservationContainer--overlapTop {
+    margin-top: calc(-1 * var(--overlapWidth));
+    padding-left: calc(var(--sectionContentMaxWidth) + 125px);
+  }
+
+  .Reservation__section .patternLines.patternLines--left::before {
+    display: inline-block;
+    bottom: -20px;
+    left: calc(-1 * var(--patternLinesWidth) / 2);
+    z-index: -1;
+  }
+}
+
+@media (min-width: 1441px) {
+  .Section.BookingHero__section {
+    background-image: var(--bg-booking-hero-desktop2x);
+  }
+}
+
+/* Reservation Form */
+.ReservationForm {
+  background-color: var(--color-white);
+  padding: 32px;
+  display: grid;
+  gap: 34px;
+  box-shadow: 0 75px 100px -50px var(--color-img-shadow);
+  max-width: 540px;
+  width: 100%;
+}
+
+.FormItem__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FormItem__inputError {
+  color: var(--color-red);
+  font: var(--fontInputErrorS);
+  letter-spacing: -0.13px;
+}
+
+.FormItem__inputError--paddingTop {
+  padding-top: 12px;
+}
+
+.FormItem__inputError--paddingLeft {
+  padding-left: 16px;
+}
+
+input,
+select,
+.Quantity__container {
+  --inputHorizontalPadding: 16px;
+  --inputTopPadding: 3px;
+  padding: var(--inputTopPadding) var(--inputHorizontalPadding) 14px;
+  border-bottom: 1px solid var(--color-med-gray);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+input[aria-invalid="true"]:placeholder-shown::placeholder {
+  color: var(--color-red);
+}
+
+.FormItem__labelContainer {
+  width: 100%;
+}
+
+.Label {
+  font: var(--inputLabel);
+  color: var(--color-cod-gray);
+}
+
+.Label--targetError {
+  color: var(--color-red);
+}
+
+.Date__container,
+.Time__container {
+  display: grid;
+  gap: 14px;
+  --shortInputWidth: 73px;
+  --longInputWidth: 88px;
+  --maxShortInputWidth: 80px;
+  --maxLongInputWidth: 97px;
+  grid-template-columns: var(--shortInputWidth) var(--shortInputWidth) 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.Date__container *,
+.Time__container * {
+  min-width: var(--shortInputWidth);
+  max-width: var(--maxShortInputWidth);
+}
+
+#year,
+#meridiem {
+  min-width: var(--longInputWidth);
+  max-width: var(--maxLongInputWidth);
+}
+
+@media (min-width: 768px) {
+  .FormItem__container:has(.FormItem__labelContainer) {
+    flex-direction: row;
+    align-items: center;
+    gap: 65px;
+  }
+
+  .Date__container,
+  .Time__container {
+    gap: 16px;
+    grid-template-columns: var(--maxShortInputWidth) var(--maxShortInputWidth) 1fr;
+  }
+
+  .FormItem__inputError {
+    font: var(--fontInputErrorM);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Reservation__section .Section__content {
+    max-width: 540px;
+  }
+}
+
+/* AM/PM */
+.Time__select,
+.Time__select::picker(select) {
+  appearance: base-select;
+}
+
+.Time__select {
+  border-radius: 0;
+}
+
+.Time__select::picker-icon {
+  content: var(--icon-arrow);
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.4s;
+  transform-origin: center;
+}
+
+.Time__select:open::picker-icon {
+  transform: rotate(180deg);
+}
+
+.Time__select::picker(select) {
+  opacity: 0;
+  border: none;
+  box-shadow: 0 15px 25px 0 var(--color-picker-shadow);
+  transition: all 0.4s allow-discrete;
+}
+
+.Time__select::picker(select):popover-open {
+  opacity: 1;
+}
+
+@starting-style {
+  .Time__select::picker(select):popover-open {
+    opacity: 0;
+  }
+}
+
+.Time__select option {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.Time__select option::checkmark {
+  content: var(--icon-check);
+}
+
+.Time__select::picker(select) {
+  top: calc(anchor(bottom) + 8px);
+}
+
+/* quantity */
+.Quantity__container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  align-items: center;
+}
+
+.Quantity__btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Quantity__btn img {
+  object-fit: cover;
+}
+
+.Quantity__btn:hover img {
+  opacity: 0.5;
+}
+
+.Quantity__text {
+  font: var(--fontHeadingM);
+  letter-spacing: -0.25px;
+}
+
+/* submit button */
+.ReservationSubmit__button {
+  width: 100%;
+  font: var(--fontHeadingS);
+  padding: 17px 32px;
 }

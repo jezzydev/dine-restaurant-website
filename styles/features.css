@@ -1,6 +1,5 @@
-/* Features section */
 .Features__section {
-  --overlapWidth: 74px;
+  position: relative;
   --bottomPadding: 80px;
   padding: 0 24px var(--bottomPadding);
 }
@@ -9,14 +8,71 @@
   position: relative;
 }
 
-.FeaturesContainer--overlapTop {
-  top: calc(-1 * var(--overlapWidth));
+.FeaturesContainer--overlapTop,
+.FeaturesContainer--overlapBottom {
+  z-index: 100;
 }
 
-.Section:has(.FeaturesContainer--overlapTop) {
-  padding-bottom: calc(var(--bottomPadding) - var(--overlapWidth));
+.FeaturesContainer--overlapTop {
+  margin-top: calc(-1 * var(--featuresOverlapWidth));
+}
+
+.FeaturesContainer--overlapBottom {
+  margin-bottom: calc(-1 * var(--featuresOverlapWidth));
 }
 
 .FeaturesContainer--overlap .Section__image {
-  z-index: 20;
+  object-fit: contain;
+  width: 100%;
+}
+
+@media (min-width: 500px) {
+  .Features__section {
+    --featuresOverlapWidth: 25px;
+    --bottomPadding: 118px;
+  }
+
+  .Features__section.Section--patternCurveTopRight {
+    background: top 140px right calc(50% + var(--patternCurveTopWidth) / 2)
+      no-repeat var(--pattern-curve-top-right);
+  }
+
+  .Features__section.Section--patternCurveTopLeft {
+    background: bottom 0px left calc(50% + var(--patternCurveTopWidth) / 2)
+      no-repeat var(--pattern-curve-top-left);
+  }
+}
+
+@media (min-width: 768px) {
+  .Features__section {
+    --featuresOverlapWidth: 75px;
+  }
+
+  .Features__section.Section--patternCurveTopRight {
+    background: top 190px right calc(50% + var(--patternCurveTopWidth) / 2) /
+      var(--patternCurveTopWidth) var(--patternCurveTopHeight) no-repeat
+      var(--pattern-curve-top-right);
+  }
+
+  .Features__section .patternLines.patternLines--right::after {
+    display: inline-block;
+    bottom: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Features__section:has(.FeaturesContainer--overlapBottom) {
+    padding-bottom: 0;
+  }
+
+  .Section--patternCurveTopRight {
+    background: top 285px left 0px / var(--patternCurveTopWidth)
+      var(--patternCurveTopHeight) no-repeat var(--pattern-curve-top-right);
+  }
+
+  .Section--patternCurveTopLeft {
+    background: bottom var(--featuresOverlapWidth) right 0px /
+      var(--patternCurveTopWidth) var(--patternCurveTopHeight) no-repeat
+      var(--pattern-curve-top-left);
+  }
 }

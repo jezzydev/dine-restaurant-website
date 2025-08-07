@@ -1,5 +1,19 @@
 .Section {
-  padding: 80px 24px;
+  padding: var(--sectionPaddingTop) var(--sectionHorizontalPadding)
+    var(--sectionPaddingBottom);
+  --sectionPaddingTop: 80px;
+  --sectionPaddingBottom: 80px;
+  --sectionHorizontalPadding: 24px;
+  --sectionContainerMaxWidth: 1110px;
+  --sectionContentMaxWidth: 445px;
+  --sectionContainerHorizontalPadding: 50px;
+  --bookingHeroSectionPaddingTop: 56px;
+  --bookingHeroSectionPaddingBottom: 228px;
+  --bookingHeroSectionHorizontalPadding: 24px;
+  --featuresOverlapWidth: 74px;
+  --bookingHeroZindex: 50;
+  --reservationContainerZindex: 100;
+  width: 100%;
 }
 
 .Section--light {
@@ -13,23 +27,35 @@
 }
 
 .Section__container {
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--sectionContainerMaxWidth);
+  display: grid;
+  grid-template-areas:
+    "section-image"
+    "section-content";
   justify-content: center;
+  justify-items: center;
   gap: 42px;
 }
 
+.Section__container picture {
+  grid-area: section-image;
+}
+
 .Section__image {
+  grid-area: section-image;
   display: block;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
   box-shadow: 0 75px 100px -50px var(--color-img-shadow);
 }
 
 .Section__content {
+  grid-area: section-content;
   width: 100%;
   display: grid;
   gap: 36px;
-  justify-content: center;
   justify-items: center;
   align-items: center;
   grid-auto-rows: auto;
@@ -53,4 +79,55 @@
 
 .Section__description {
   font: var(--fontBody2);
+}
+
+@media (min-width: 500px) {
+  .Section__container {
+    padding-left: var(--sectionContainerHorizontalPadding);
+    padding-right: var(--sectionContainerHorizontalPadding);
+    gap: 56px;
+  }
+
+  .Section__content {
+    gap: 39px;
+  }
+
+  .Section__text {
+    gap: 27px;
+    width: 457px;
+  }
+
+  .Section__title {
+    font: var(--fontHeadingL);
+    letter-spacing: -0.5px;
+  }
+
+  .Section__description {
+    font: var(--fontBody1);
+  }
+}
+
+@media (min-width: 1200px) {
+  .Section__container {
+    grid-auto-columns: auto auto;
+    grid-template-areas: "section-image section-content";
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 125px;
+  }
+
+  .Section__container--reverse {
+    grid-template-areas: "section-content section-image";
+  }
+
+  .Section__content {
+    justify-content: start;
+    justify-items: start;
+    max-width: var(--sectionContentMaxWidth);
+  }
+
+  .Section__text {
+    text-align: start;
+  }
 }
